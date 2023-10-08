@@ -1,0 +1,364 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// MAP & VARIABLES :
+
+// My custom color map:
+$custom-colors: (
+  "custom-white": #fff,
+  "custom-blue": #038AFF,
+  "custom-orange" : #FEBD3D,
+  "custom-green" : #5CCAA7,
+  "custom-dark" : #161348,
+  "custom-black" : #000,
+  "custom-title-color" : #162C5B,
+  "custom-text-color" : #8996A9,
+  "custom-border-color" : #dbe1e9,
+  "custom-bg-section-color" : #FAFBFF,
+  "custom-border-nav" : #399DFF
+);
+
+// Merge my custom color map with theme-color map:
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+// My custom space:
+$custom-spacers:(
+  "6" : ($spacer * 4.5),
+  "double": ($spacer * 9)
+);
+
+// Merge my custom space map with spacers map:
+$spacers: map-merge($spacers, $custom-spacers);
+
+
+// Return variables from theme-color:
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+
+
+//Text variable:
+$small-text: 0.75rem;
+$mid-text : 0.875rem;
+$pres-text : 1.125rem;
+$font-size-m : 1.25rem;
+
+$h1-font-size: 2.8125rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+
+//Link Variable:
+$link-hover-decoration: none;
+
+//Border variable:
+$border-category : 25px;
+
+//Modifie Button Variable:
+$btn-font-weight: 600;
+$btn-border-radius : 0.3125rem;
+
+$card-border-radius : 10px; 
+$card-border-color: theme-color("custom-border-color");
+
+$progress-height:2px;
+
+
+i{
+  -webkit-text-stroke: 0.5px;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+nav{
+  top: 0;
+  z-index: 1000;
+}
+nav > .container{
+  border-bottom: 1px solid #399DFF
+}
+.navbar-brand img{
+  height: 30px;
+}
+.small-text{
+  font-size: $small-text;
+}
+.mid-text{
+  font-size: $mid-text;
+}
+.pres-text{
+  font-size: $pres-text;
+}
+.wave-separator{
+  bottom: -1px; 
+  left:0;
+}
+.card-manager-container{
+  border-radius: 15px;
+  border-bottom-right-radius: 20%;
+}
+.indicator-activeCard, .btn-play{
+  border-radius: $btn-border-radius;
+  font-size: $small-text !important;
+  font-weight: $btn-font-weight;
+}
+.mycards-link-container{
+  border-bottom: 2px dotted theme-color("custom-blue");
+  display: inline-block;
+}
+.mycards-link-container i{
+  color: theme-color("custom-blue");
+  font-size: 7px;
+}
+.container-linked{
+  z-index: 1;
+}
+.card-vid{
+  border-radius: $card-border-radius;
+  border: 1px solid theme-color("custom-border-color");
+}
+.btn-play--left{
+  top: 4%; 
+  left: 4%;
+}
+.btn-play--right{
+  top: 4%; 
+  right: 4%;
+}
+.el-bold{
+  font-weight: $btn-font-weight;
+}
+.dotted-line{
+  z-index: 0;
+  width: 30%;
+}
+.dotted-line--firstSection{
+  right: 330px;
+  top: 31px;
+  transform: rotate(35deg);
+}
+.dotted-line--secondSection{
+  left: 290px;
+  top: 47px;
+  transform: rotate(-45deg);
+}
+.dotted-line--bannerSection{
+  left: 290px;
+  top: 47px;
+  transform: rotate(-45deg);
+}
+.specifiq-link--two{
+  font-weight: $btn-font-weight;
+}
+.specifiq-link::after{
+  content: "";
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 3px;
+  top: 7px;
+  transition: .2s;
+}
+.specifiq-link--one::after{
+  background-color: theme-color("custom-blue");
+}
+.specifiq-link--two::after{
+  background-color: theme-color("custom-title-color");
+}
+.specifiq-link:hover::after{
+  top: 15px;
+}
+.specifiq-link--one:hover::after{
+  background: darken(theme-color("custom-blue"),15%);
+}
+.specifiq-link--two:hover::after{
+  background: darken(theme-color("custom-title-color"),15%);
+}
+.trusted-company{
+  height: 25px;
+}
+.credit-card{
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.dotted-texture{
+  top:0; 
+  right: -50px; 
+  width: 73%; 
+  pointer-events: none;
+}
+.btn-add{
+  border-width: 2px !important;
+   font-size: $small-text;
+}
+.credit-card__number{
+  font-size: 23.8px;
+}
+.text-indicator{
+  border-radius: $border-category;
+  font-size: $small-text;
+}
+.presentation-text{
+  font-size: $pres-text;
+}
+.presentation-text--two{
+  font-size: $font-size-m;
+  font-weight: $btn-font-weight;
+  line-height: 2;
+}
+.progress-bar--one{
+  width: 35%;
+}
+.progress-bar--two{
+  width: 55%;
+}
+.progress-bar--three{
+  width: 75%;
+}
+.box-img{
+  border-radius: 10px; 
+  background-size: cover;
+  background-repeat: no-repeat
+}
+.box-img--one{
+  background-image: url(../assets/img/img_01.jpg);
+  width: 310px; 
+  height: 250px; 
+  top: -70px; 
+  right: -60px; 
+  z-index: 1;
+}
+.box-img--two{
+  background-image: url(../assets/img/img_02.jpg);
+  height: 400px;
+}
+.box-img--three{
+  background-image: url(../assets/img/img_03.jpg);
+  height: 400px;
+}
+.circle-user{
+  width: 36px; 
+  height: 36px;
+}
+.circle-check{
+  min-width: 45px; 
+  height: 45px;
+}
+.banner-bottom{
+  border-bottom-left-radius: 70px;
+  border-top-right-radius: 70px;
+}
+.bi-star{
+  color: theme-color("custom-border-color");
+  -webkit-text-stroke: 1px;
+  font-size: $mid-text;
+}
+.liked{
+  color: theme-color("custom-orange");
+}
+.lastcard-img{
+  width: 40%;
+}
+.websiteUser-container{
+  border-bottom: 1px solid; border-image: linear-gradient(90deg, theme-color("custom-white"), theme-color("custom-border-color"), theme-color("custom-white"))1;
+}
+.websiteUser-container__box{
+  max-width: 40px;
+}
+.websiteUser-container__box--one{
+  left: 10px;
+}
+.websiteUser-container__box--three{
+  left: -10px;
+}
+.websiteUser-container__box img{
+  max-width: 100%; 
+  border: 2px solid #fff;
+}
+.download-btn-container i{
+  font-size: 32px;
+}
+.download-btn-container span{
+  line-height: 1;
+}
+.download-btn-container span:last-child{
+  font-size: $font-size-m;
+}
+.card-awards-row{
+  margin-top: 50px;
+}
+.card-awards{
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0 .125rem .25rem rgba($black, .075);
+}
+.card-awards--top{
+  top: -50px;
+}
+.card-awards:hover{
+  transform: translateY(-20px);
+  box-shadow: rgba(57, 71, 86, 0.1) 0px 10px 50px;
+}
+.card-awards img{
+  width: 100%;
+}
+.card-awards--txt{
+  font-size: $mid-text;
+  font-weight: $btn-font-weight;
+}
+.top-footer, .bottom-footer{
+  border-bottom: 1px solid;     
+  border-image: linear-gradient(90deg, #161348, #39366c, #161348) 1;
+}
+
+@media(min-width:1200px){
+  .dotted-line--firstSection{
+    right: 372px;
+    top: 46px;
+  }
+  .dotted-line--secondSection{
+    left: 330px;
+    top: 70px;
+}
+.dotted-line--bannerSection{
+  left: 330px;
+  top: 70px;
+}
+  .custom-container{
+    max-width: none !important;
+    width: 100% !important; 
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  .trusted-company{
+    height: 28px;
+  }
+  .credit-card{
+    height: 260px;
+  }
+  .credit-card__number{
+    font-size: 30.4px;
+  }
+  .mastercard-logo{
+    width: 40px;
+  }
+  .box-img--one{
+    width: 350px;
+    height: 270px;
+  }
+  .card-awards img{
+    width: 70%;
+  }
+  .card-awards--txt{
+    font-size: $font-size-m;
+  }
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
