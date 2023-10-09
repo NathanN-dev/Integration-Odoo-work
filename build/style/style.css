@@ -214,11 +214,6 @@ nav > .container {
   z-index: 1;
 }
 
-.box-img--two {
-  background-image: url(../assets/img/img_02.jpg);
-  height: 400px;
-}
-
 .circle-user {
   width: 36px;
   height: 36px;
