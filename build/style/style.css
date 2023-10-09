@@ -73,7 +73,7 @@ nav > .container {
 
 .btn-play--left {
   top: 4%;
-  left: 4%;
+  left: 6%;
 }
 
 .btn-play--right {
@@ -197,8 +197,12 @@ nav > .container {
 
 .box-img {
   border-radius: 10px;
+}
+
+.box-img--cover {
   background-size: cover;
   background-repeat: no-repeat;
+  border-radius: 10px;
 }
 
 .box-img--one {
@@ -212,11 +216,6 @@ nav > .container {
 
 .box-img--two {
   background-image: url(../assets/img/img_02.jpg);
-  height: 400px;
-}
-
-.box-img--three {
-  background-image: url(../assets/img/img_03.jpg);
   height: 400px;
 }
 
